@@ -184,8 +184,9 @@ function registerButtonHandlers() {
         });
     });
 
-    document.getElementById('getContext').addEventListener('click',function(){
+    document.getElementById('getContext').addEventListener('click', function(){
         document.getElementById('contextDataField').textContent = JSON.stringify(liff.getContext());
+        toggleContextData();
     });
 
     // login call, only when external browser is used
@@ -233,7 +234,7 @@ function toggleQrCodeReader() {
     toggleElement('scanQr');
 }
 
-function togggleContextData(){
+function toggleContextData(){
     toggleElement('contextData')
 }
 
