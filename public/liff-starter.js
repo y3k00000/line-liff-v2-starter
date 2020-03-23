@@ -184,6 +184,10 @@ function registerButtonHandlers() {
         });
     });
 
+    document.getElementById('getContext').addEventListener('click',function(){
+        document.getElementById('contextDataField').textContent = JSON.stringify(liff.getContext());
+    });
+
     // login call, only when external browser is used
     document.getElementById('liffLoginButton').addEventListener('click', function() {
         if (!liff.isLoggedIn()) {
@@ -227,6 +231,10 @@ function toggleProfileData() {
 */
 function toggleQrCodeReader() {
     toggleElement('scanQr');
+}
+
+function togggleContextData(){
+    toggleElement('contextData')
 }
 
 /**
