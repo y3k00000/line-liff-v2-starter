@@ -189,6 +189,13 @@ function registerButtonHandlers() {
         toggleContextData();
     });
 
+    document.getElementById('contextDataField').addEventListener('click',function(ev){
+        var textSelection = window.getSelection();
+        textSelection.selectAllChildren(ev.target);
+        document.execCommand('copy');
+        textSelection.empty();
+    });
+
     // login call, only when external browser is used
     document.getElementById('liffLoginButton').addEventListener('click', function() {
         if (!liff.isLoggedIn()) {
